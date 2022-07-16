@@ -29,8 +29,6 @@ int main(void) {
   }
   i = 0;
   int j = 0;
-  printf(".model small\n");
-  printf(".code\n");
   do {
     scanf("%s", t);
     if (t[1] == ':') {
@@ -39,13 +37,7 @@ int main(void) {
       }
       sy[t[0]] = i;
     }
-    if (strcmp(t, "int") == 0) {
-      scanf("%d", &g);
-      i = i+2;
-      mcodes[j++] = 205;
-      mcodes[j++] = g;
-    }
-    if (strcmp(t, "jc") == 0) {
+    if (strcmp(t, "afz") == 0) {
       scanf("%s", u);
       i = i+2;
       mcodes[j++] = 114;
@@ -54,22 +46,20 @@ int main(void) {
       } else {
         mcodes[j++] = sy[u[0]] - i;
       }
-      //printf("db 114\n");
-      //printf("db %d\n", sy[u[0]] - i);
     }
-    if (strcmp(t, "jmp") == 0) {
+    if (strcmp(t, "atl") == 0) {
       scanf("%s", u);
       i = i+2;
       mcodes[j++] = 235;
       mcodes[j++] = sy[u[0]] - i;
     }
-    if (strcmp(t, "jl") == 0) {
+    if (strcmp(t, "aaz") == 0) {
       scanf("%s", u);
       i = i+2;
       mcodes[j++] = 124;
       mcodes[j++] = sy[u[0]] - i;
     }
-    if (strcmp(t, "add") == 0) {
+    if (strcmp(t, "top") == 0) {
       scanf("%s%s", u, v);
       if (v[0] >= '0' && v[0] <= '9') {
         i = i+3;
@@ -82,7 +72,7 @@ int main(void) {
         mcodes[j++] = 192 + f(u)*8 + f(v);
       }
     }
-    if (strcmp(t, "cmp") == 0) {
+    if (strcmp(t, "krs") == 0) {
       scanf("%s%s", u, v);
       if (v[0] >= '0' && v[0] <= '9') {
         i = i+3;
@@ -95,30 +85,7 @@ int main(void) {
         mcodes[j++] = 192 + f(u)*8 + f(v);
       }
     }
-    if (strcmp(t, "mov") == 0) {
-      scanf("%s%s", u, v);
-      if (f(u) < 8) {
-        i = i+2;
-        if (f(v) < 200) {
-          mcodes[j++] = 138;
-          mcodes[j++] = 192 + f(u)*8 + f(v);
-        } else {
-          mcodes[j++] = 176 + f(u);
-          mcodes[j++] = atoi(v);
-        }
-      } else {
-        if (f(v) < 200) {
-          i = i+2;
-          mcodes[j++] = 139;
-          mcodes[j++] = 192 + (f(u)-8)*8 + f(v)-8;
-        } else {
-          i = i+3;
-          mcodes[j++] = 184 + f(u)-8;
-          mcodes[j++] = (atoi(v) % 256);
-          mcodes[j++] = (atoi(v) / 256);
-      }
-    }
-  } while (strcmp(t, "end") != 0);
+	 while (strcmp(t, "son") != 0);
   for (int k = 0; k < j; k++)
     printf("db %d\n", mcodes[k]);
   printf("end\n");
