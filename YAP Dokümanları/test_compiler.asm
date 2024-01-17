@@ -19,7 +19,7 @@
     002c: pop ebp
     002d: ret
 
-<Program>$.<<Main>$>g__khginstagram_Click|0_0(System.Object)
+<Program>$.<<Main>$>g__|0_0(System.Object)
     0000: push ebp
     0001: mov ebp, esp
     0003: sub esp, 8
@@ -39,7 +39,7 @@
     002f: pop ebp
     0030: ret
 
-<Program>$.<<Main>$>g__compilebuton_Click|0_1(System.Object, <>c__DisplayClass0_0 ByRef)
+<Program>$.<<Main>$>g__|0_1(System.Object, <>c__DisplayClass0_0 ByRef)
     0000: push ebp
     0001: mov ebp, esp
     0003: sub esp, 0x130
